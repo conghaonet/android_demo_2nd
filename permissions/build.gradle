@@ -1,0 +1,11 @@
+apply from: "../configs/library.gradle"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.kotlinStdlibJdk8
+    implementation libs.androidAppcompatV7
+    implementation libs.androidConstraintLayout
+    testImplementation test.junit
+    androidTestImplementation test.androidTestRunner
+    androidTestImplementation test.androidEspressoCore
+}

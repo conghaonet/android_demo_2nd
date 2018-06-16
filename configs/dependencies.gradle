@@ -1,0 +1,34 @@
+ext {
+    androidCompileSdkVersion = 27
+    androidMinSdkVersion = 15
+    androidTargetSdkVersion = 27
+
+    kotlinVersion = '1.2.50'
+    androidSupportVersion = '27.1.1'
+
+    libs = [
+            kotlinStdlibJdk8            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            androidSupportV13           : "com.android.support:support-v13:${androidSupportVersion}",
+            androidAppcompatV7          : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            androidDesign               : "com.android.support:design:${androidSupportVersion}",
+            androidSupportAnnotations   : "com.android.support:support-annotations:${androidSupportVersion}",
+            androidRecyclerviewV7       : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            androidCardviewV7           : "com.android.support:cardview-v7:${androidSupportVersion}",
+            androidPercent              : "com.android.support:percent:${androidSupportVersion}",
+            androidPaletteV7            : "com.android.support:palette-v7:${androidSupportVersion}",
+            androidSupportV4            : "com.android.support:support-v4:${androidSupportVersion}",
+            androidSupportCompat        : "com.android.support:support-compat:${androidSupportVersion}",
+            androidSupportCoreUtils     : "com.android.support:support-core-utils:${androidSupportVersion}",
+            androidSupportCoreUi        : "com.android.support:support-core-ui:${androidSupportVersion}",
+            androidSupportMediaCompat   : "com.android.support:support-media-compat:${androidSupportVersion}",
+            androidSupportFragment      : "com.android.support:support-fragment:${androidSupportVersion}",
+            androidCustomtabs           : "com.android.support:customtabs:${androidSupportVersion}",
+            androidConstraintLayout     : "com.android.support.constraint:constraint-layout:1.1.2"
+    ]
+
+    test =[
+            junit                       : "junit:junit:4.12",
+            androidTestRunner           : "com.android.support.test:runner:1.0.2",
+            androidEspressoCore         : "com.android.support.test.espresso:espresso-core:3.0.2"
+    ]
+}
