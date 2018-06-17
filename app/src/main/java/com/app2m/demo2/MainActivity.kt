@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        mBinding = DataBindingUtil.setContentView<Demo2ActivityMainBinding>(this, R.layout.demo2_activity_main)
         mBinding.activity = this
+        mBinding.model = MainVM()
     }
 
     fun onClickPermissions(view: View) {
