@@ -5,6 +5,9 @@
         <variable
             name="activity"
             type="com.app2m.demo2.MainActivity"/>
+        <variable
+            name="model"
+            type="com.app2m.demo2.MainVM"/>
     </data>
     <ScrollView
         android:layout_width="match_parent"
@@ -16,8 +19,13 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="请求权限"
+                android:text="@{model.name}"
                 android:onClick="@{(v) -> activity.onClickPermissions(v)}"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{model.age}"
                 />
         </LinearLayout>
     </ScrollView>
