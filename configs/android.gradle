@@ -5,10 +5,10 @@ android {
         enabled = true
     }
 
-    compileSdkVersion COMPILE_SDK_VERSION as int
+    compileSdkVersion this.androidCompileSdkVersion
     defaultConfig {
-        minSdkVersion MIN_SDK_VERSION as int
-        targetSdkVersion TARGET_SDK_VERSION as int
+        minSdkVersion this.androidMinSdkVersion
+        targetSdkVersion this.androidTargetSdkVersion
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
