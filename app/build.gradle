@@ -31,4 +31,5 @@ dependencies {
 
     implementation project(':permissions')
     kapt "com.android.databinding:compiler:${this.gradlePluginVersion}"
+
 }
