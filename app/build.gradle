@@ -8,18 +8,27 @@ apply from: "../configs/android.gradle"
 android {
     defaultConfig {
         applicationId "com.app2m.demo2"
-        versionCode 1
-        versionName "1.0"
     }
     dexOptions {
-        javaMaxHeapSize "8g"
+        javaMaxHeapSize "4g"
     }
-/*
-    kapt {
-        generateStubs = true
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
-*/
 }
+/*
+kapt {
+    generateStubs = true
+}
+*/
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libs.kotlinStdlibJdk8
@@ -29,7 +38,7 @@ dependencies {
     androidTestImplementation test.androidTestRunner
     androidTestImplementation test.androidEspressoCore
 
-    implementation project(':permissions')
     kapt "com.android.databinding:compiler:${this.gradlePluginVersion}"
+    implementation project(':permissions')
 
 }

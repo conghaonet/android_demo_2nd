@@ -6,9 +6,12 @@ android {
     }
 
     compileSdkVersion this.androidCompileSdkVersion
+//    buildToolsVersion this.androidBuildToolsVersion
     defaultConfig {
         minSdkVersion this.androidMinSdkVersion
         targetSdkVersion this.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -28,6 +31,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
+        suppressWarnings = true
         jvmTarget = '1.8'
     }
 }
