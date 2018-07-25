@@ -6,7 +6,10 @@ android {
     }
 
     compileSdkVersion this.androidCompileSdkVersion
-//    buildToolsVersion this.androidBuildToolsVersion
+    if(androidBuildToolsVersion.trim()) {
+        buildToolsVersion this.androidBuildToolsVersion
+    }
+
     defaultConfig {
         minSdkVersion this.androidMinSdkVersion
         targetSdkVersion this.androidTargetSdkVersion
@@ -23,7 +26,7 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['src/main/java']
+            java.srcDirs = ['src/main/java', 'src/main/kotlin']
         }
     }
     compileOptions {
