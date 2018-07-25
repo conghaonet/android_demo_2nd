@@ -6,7 +6,7 @@ import android.databinding.Bindable
 class MainVM : BaseObservable() {
     @Bindable
     public fun getName() : String{
-        return "姓名：张三"
+        return "跳转到:PermissionsActivity"
     }
 
     @Bindable

@@ -9,6 +9,7 @@ android {
     if(androidBuildToolsVersion.trim()) {
         buildToolsVersion this.androidBuildToolsVersion
     }
+    println('androidBuildToolsVersion ====' + androidBuildToolsVersion)
 
     defaultConfig {
         minSdkVersion this.androidMinSdkVersion
