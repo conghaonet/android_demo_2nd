@@ -9,5 +9,6 @@ dependencies {
     testImplementation test.junit
     androidTestImplementation test.androidTestRunner
     androidTestImplementation test.androidEspressoCore
+    implementation libs.androidSupportV4
+    implementation libs.androidDesign
 }
-

@@ -7,8 +7,11 @@ ext {
 
     kotlinVersion = '1.2.51'
     androidSupportVersion = '27.1.1'
+    ankoVersion = '0.10.4'
+    gsonVersion = "2.7"
 
     libs = [
+            ankoCommon                : "org.jetbrains.anko:anko-common:${ankoVersion}",
             kotlinStdlibJdk8            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             androidSupportV13           : "com.android.support:support-v13:${androidSupportVersion}",
             androidAppcompatV7          : "com.android.support:appcompat-v7:${androidSupportVersion}",
@@ -25,7 +28,8 @@ ext {
             androidSupportMediaCompat   : "com.android.support:support-media-compat:${androidSupportVersion}",
             androidSupportFragment      : "com.android.support:support-fragment:${androidSupportVersion}",
             androidCustomtabs           : "com.android.support:customtabs:${androidSupportVersion}",
-            androidConstraintLayout     : "com.android.support.constraint:constraint-layout:1.1.2"
+            androidConstraintLayout     : "com.android.support.constraint:constraint-layout:1.1.2",
+            gson                        : "com.google.code.gson:gson:${gsonVersion}"
     ]
 
     test =[

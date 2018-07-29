@@ -34,11 +34,13 @@ dependencies {
     implementation libs.kotlinStdlibJdk8
     implementation libs.androidAppcompatV7
     implementation libs.androidConstraintLayout
+    implementation libs.ankoCommon
     testImplementation test.junit
     androidTestImplementation test.androidTestRunner
     androidTestImplementation test.androidEspressoCore
 
     kapt "com.android.databinding:compiler:${this.gradlePluginVersion}"
     implementation project(':permissions')
-
+    implementation project(path: ':tab')
+    implementation project(path: ':network')
 }

@@ -27,6 +27,18 @@
                 android:layout_height="wrap_content"
                 android:text="@{model.age}"
                 />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Goto: tab module"
+                android:onClick="@{(v) -> activity.onClickMyTabLayout()}"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Goto: network module"
+                android:onClick="@{(v) -> activity.onClickMyNetwork()}"/>
         </LinearLayout>
     </ScrollView>
 </layout>

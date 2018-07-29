@@ -1,13 +1,21 @@
 apply from: "../configs/library.gradle"
-
+android {
+    //@Parcelize 注解需要设置：experimental = true
+    androidExtensions {
+        experimental = true
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation libs.kotlinStdlibJdk8
     implementation libs.androidAppcompatV7
     implementation libs.androidConstraintLayout
     implementation libs.ankoCommon
+    implementation libs.gson
+    implementation libs.androidConstraintLayout
     testImplementation test.junit
     androidTestImplementation test.androidTestRunner
     androidTestImplementation test.androidEspressoCore
+    implementation libs.androidSupportV4
+    implementation libs.androidDesign
 }
-
