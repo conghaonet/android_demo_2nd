@@ -10,6 +10,9 @@ import org.jetbrains.anko.uiThread
 import java.net.URL
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.toast
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.Future
 
 
@@ -40,6 +43,18 @@ class NetworkActivity : AppCompatActivity() {
                 }
             }
         }
+
+/*
+        buttonRxkotlin.setOnClickListener{
+            var retrofit = Retrofit.Builder()
+                    .client(httpClientBuilder.build())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .baseUrl(ApiServers.BASE_URL)
+                    .build()
+            var apiServers = retrofit.create(ApiServers::class.java)
+        }
+*/
     }
 
     override fun onBackPressed() {

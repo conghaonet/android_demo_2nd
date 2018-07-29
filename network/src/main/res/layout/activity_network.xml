@@ -12,6 +12,12 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="请求CommonCode By doAsync"/>
+    <Button
+        android:id="@+id/buttonRxkotlin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="请求CommonCode By Rxkotlin"/>
     <TextView
         android:id="@+id/tvValue"
         android:layout_width="match_parent"

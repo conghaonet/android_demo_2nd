@@ -8,33 +8,37 @@ ext {
     kotlinVersion = '1.2.51'
     androidSupportVersion = '27.1.1'
     ankoVersion = '0.10.4'
-    gsonVersion = "2.7"
-
+    retrofit2Version = '2.4.0'
     libs = [
-            ankoCommon                : "org.jetbrains.anko:anko-common:${ankoVersion}",
-            kotlinStdlibJdk8            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
-            androidSupportV13           : "com.android.support:support-v13:${androidSupportVersion}",
-            androidAppcompatV7          : "com.android.support:appcompat-v7:${androidSupportVersion}",
-            androidDesign               : "com.android.support:design:${androidSupportVersion}",
-            androidSupportAnnotations   : "com.android.support:support-annotations:${androidSupportVersion}",
-            androidRecyclerviewV7       : "com.android.support:recyclerview-v7:${androidSupportVersion}",
-            androidCardviewV7           : "com.android.support:cardview-v7:${androidSupportVersion}",
-            androidPercent              : "com.android.support:percent:${androidSupportVersion}",
-            androidPaletteV7            : "com.android.support:palette-v7:${androidSupportVersion}",
-            androidSupportV4            : "com.android.support:support-v4:${androidSupportVersion}",
-            androidSupportCompat        : "com.android.support:support-compat:${androidSupportVersion}",
-            androidSupportCoreUtils     : "com.android.support:support-core-utils:${androidSupportVersion}",
-            androidSupportCoreUi        : "com.android.support:support-core-ui:${androidSupportVersion}",
-            androidSupportMediaCompat   : "com.android.support:support-media-compat:${androidSupportVersion}",
-            androidSupportFragment      : "com.android.support:support-fragment:${androidSupportVersion}",
-            androidCustomtabs           : "com.android.support:customtabs:${androidSupportVersion}",
-            androidConstraintLayout     : "com.android.support.constraint:constraint-layout:1.1.2",
-            gson                        : "com.google.code.gson:gson:${gsonVersion}"
+            ankoCommon                      : "org.jetbrains.anko:anko-common:${ankoVersion}",
+            kotlinStdlibJdk8                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            androidSupportV13               : "com.android.support:support-v13:${androidSupportVersion}",
+            androidAppcompatV7              : "com.android.support:appcompat-v7:${androidSupportVersion}",
+            androidDesign                   : "com.android.support:design:${androidSupportVersion}",
+            androidSupportAnnotations       : "com.android.support:support-annotations:${androidSupportVersion}",
+            androidRecyclerviewV7           : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            androidCardviewV7               : "com.android.support:cardview-v7:${androidSupportVersion}",
+            androidPercent                  : "com.android.support:percent:${androidSupportVersion}",
+            androidPaletteV7                : "com.android.support:palette-v7:${androidSupportVersion}",
+            androidSupportV4                : "com.android.support:support-v4:${androidSupportVersion}",
+            androidSupportCompat            : "com.android.support:support-compat:${androidSupportVersion}",
+            androidSupportCoreUtils         : "com.android.support:support-core-utils:${androidSupportVersion}",
+            androidSupportCoreUi            : "com.android.support:support-core-ui:${androidSupportVersion}",
+            androidSupportMediaCompat       : "com.android.support:support-media-compat:${androidSupportVersion}",
+            androidSupportFragment          : "com.android.support:support-fragment:${androidSupportVersion}",
+            androidCustomtabs               : "com.android.support:customtabs:${androidSupportVersion}",
+            androidConstraintLayout         : "com.android.support.constraint:constraint-layout:1.1.2",
+            gson                            : "com.google.code.gson:gson:2.7",
+            rxjava2Rxkotlin                 : "io.reactivex.rxjava2:rxkotlin:2.2.0",
+            rxjava2Rxandroid                : "io.reactivex.rxjava2:rxandroid:2.0.2",
+            retrofit2Retrofit               : "com.squareup.retrofit2:retrofit:$retrofit2Version",
+            retrofit2ConverterGson          : "com.squareup.retrofit2:converter-gson:$retrofit2Version",
+            retrofit2AdapterRxjava2         : "com.squareup.retrofit2:adapter-rxjava2:$retrofit2Version"
     ]
 
     test =[
-            junit                       : "junit:junit:4.12",
-            androidTestRunner           : "com.android.support.test:runner:1.0.2",
-            androidEspressoCore         : "com.android.support.test.espresso:espresso-core:3.0.2"
+            junit                           : "junit:junit:4.12",
+            androidTestRunner               : "com.android.support.test:runner:1.0.2",
+            androidEspressoCore             : "com.android.support.test.espresso:espresso-core:3.0.2"
     ]
 }
