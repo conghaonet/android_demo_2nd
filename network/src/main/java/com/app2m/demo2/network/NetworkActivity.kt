@@ -63,14 +63,14 @@ class NetworkActivity : AppCompatActivity() {
                 }
 
                 override fun onNext(t: List<CommonCodeItem>) {
-                    tvValue.text = "onNext==== CommonCode size is ${t.size}"
+                    tvValue.text = "observer onNext==== CommonCode size is ${t.size}"
                 }
 
                 override fun onSubscribe(d: Disposable) {
                     toast("onSubscribe==== disposable.isDisposed is ${d.isDisposed}")
-                    if(!d.isDisposed) {
-                        d.dispose()
-                    }
+                    //不能在这里调用dispose(), 否则onNext()将不会执行
+                    //d.dispose()
+                    compositeDisposable.add(d)
                 }
             }
             observable.subscribeOn(Schedulers.io())
@@ -91,7 +91,7 @@ class NetworkActivity : AppCompatActivity() {
                                 toast("onComplete====")
                             },
                             onNext = {
-                                tvValue.text = "onNext==== CommonCode size is ${it.size}"
+                                tvValue.text = "subscribeBy onNext==== CommonCode size is ${it.size}"
                             })
             compositeDisposable.add(disposable)
         }
