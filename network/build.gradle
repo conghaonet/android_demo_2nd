@@ -23,4 +23,6 @@ dependencies {
     implementation libs.retrofit2Retrofit
     implementation libs.retrofit2ConverterGson
     implementation libs.retrofit2AdapterRxjava2
+    implementation libs.okhttp3okhttp
+    implementation libs.okhttp3loggingInterceptor
 }

@@ -9,15 +9,22 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 import java.net.URL
 import com.google.gson.reflect.TypeToken
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.schedulers.Schedulers
 import org.jetbrains.anko.toast
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.Future
 
 
 class NetworkActivity : AppCompatActivity() {
     private var networkTask: Future<Unit>? = null
+    private var compositeDisposable = CompositeDisposable()
+    companion object {
+        val TAG = "NetworkActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,17 +51,51 @@ class NetworkActivity : AppCompatActivity() {
             }
         }
 
-/*
-        buttonRxkotlin.setOnClickListener{
-            var retrofit = Retrofit.Builder()
-                    .client(httpClientBuilder.build())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl(ApiServers.BASE_URL)
-                    .build()
-            var apiServers = retrofit.create(ApiServers::class.java)
+        btnRxObserver.setOnClickListener{
+            val apiService = RequestClient.buildService(ApiService::class.java)
+            val observable = apiService.getCommonCodes()
+            var observer = object : Observer<List<CommonCodeItem>> {
+                override fun onComplete() {
+                    toast("onComplete====")
+                }
+                override fun onError(e: Throwable) {
+                    tvValue.text = e.message
+                }
+
+                override fun onNext(t: List<CommonCodeItem>) {
+                    tvValue.text = "onNext==== CommonCode size is ${t.size}"
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                    toast("onSubscribe==== disposable.isDisposed is ${d.isDisposed}")
+                    if(!d.isDisposed) {
+                        d.dispose()
+                    }
+                }
+            }
+            observable.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(observer)
         }
-*/
+
+        btnRxSubscribeBy.setOnClickListener{
+            val apiService = RequestClient.buildService(ApiService::class.java)
+            val observable = apiService.getCommonCodes()
+            var disposable = observable.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                            onError = {
+                                tvValue.text = it.message
+                            },
+                            onComplete = {
+                                toast("onComplete====")
+                            },
+                            onNext = {
+                                tvValue.text = "onNext==== CommonCode size is ${it.size}"
+                            })
+            compositeDisposable.add(disposable)
+        }
+
     }
 
     override fun onBackPressed() {
@@ -64,5 +105,10 @@ class NetworkActivity : AppCompatActivity() {
             }
         }
         super.onBackPressed()
+    }
+
+    override fun onDestroy() {
+        compositeDisposable.dispose()
+        super.onDestroy()
     }
 }

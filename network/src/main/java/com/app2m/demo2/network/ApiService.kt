@@ -5,11 +5,11 @@ import io.reactivex.Observable
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface ApiServers {
+interface ApiService {
     companion object {
         val BASE_URL: String = "http://fepapi.beta.web.sdp.101.com/v1/"
     }
 
-    @GET("commonapi/get_codes")
-    fun getCommonCodes() : Observable<Response<List<CommonCodeItem>>>
+    @GET("commonapi/get_codes/a")
+    fun getCommonCodes() : Observable<List<CommonCodeItem>>
 }
