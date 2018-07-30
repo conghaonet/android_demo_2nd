@@ -10,6 +10,6 @@ interface ApiService {
         val BASE_URL: String = "http://fepapi.beta.web.sdp.101.com/v1/"
     }
 
-    @GET("commonapi/get_codes/a")
+    @GET("commonapi/get_codes")
     fun getCommonCodes() : Observable<List<CommonCodeItem>>
 }
