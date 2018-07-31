@@ -15,20 +15,23 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.util.concurrent.Future
-
 
 class NetworkActivity : AppCompatActivity() {
     private var networkTask: Future<Unit>? = null
     private var compositeDisposable = CompositeDisposable()
     companion object {
-        val TAG = "NetworkActivity"
+        private val TAG = "NetworkActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_network)
+        btnJavaActivity.setOnClickListener {
+            startActivity<NetworkJavaActivity>()
+        }
         buttonDoAsync.setOnClickListener{
             buttonDoAsync.isEnabled = false
             networkTask = doAsync {

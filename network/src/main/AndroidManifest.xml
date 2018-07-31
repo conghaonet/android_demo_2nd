@@ -3,7 +3,8 @@
     package="com.app2m.demo2.network">
 
     <application>
-        <activity android:name=".NetworkActivity"></activity>
+        <activity android:name=".NetworkActivity" />
+        <activity android:name=".NetworkJavaActivity" />
     </application>
 
 </manifest>

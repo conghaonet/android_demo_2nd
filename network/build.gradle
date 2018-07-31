@@ -19,6 +19,7 @@ dependencies {
     implementation libs.androidSupportV4
     implementation libs.androidDesign
     implementation libs.rxjava2Rxkotlin
+    implementation libs.rxjava2Rxjava
     implementation libs.rxjava2Rxandroid
     implementation libs.retrofit2Retrofit
     implementation libs.retrofit2ConverterGson
