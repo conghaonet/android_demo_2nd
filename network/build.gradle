@@ -10,7 +10,7 @@ dependencies {
     implementation libs.kotlinStdlibJdk8
     implementation libs.androidAppcompatV7
     implementation libs.androidConstraintLayout
-    implementation libs.ankoCommon
+    implementation libs.ankoCommons
     implementation libs.gson
     implementation libs.androidConstraintLayout
     testImplementation test.junit
@@ -19,7 +19,6 @@ dependencies {
     implementation libs.androidSupportV4
     implementation libs.androidDesign
     implementation libs.rxjava2Rxkotlin
-    implementation libs.rxjava2Rxjava
     implementation libs.rxjava2Rxandroid
     implementation libs.retrofit2Retrofit
     implementation libs.retrofit2ConverterGson

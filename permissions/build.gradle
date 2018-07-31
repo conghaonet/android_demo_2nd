@@ -5,7 +5,7 @@ dependencies {
     implementation libs.kotlinStdlibJdk8
     implementation libs.androidAppcompatV7
     implementation libs.androidConstraintLayout
-    implementation libs.ankoCommon
+    implementation libs.ankoCommons
     testImplementation test.junit
     androidTestImplementation test.androidTestRunner
     androidTestImplementation test.androidEspressoCore
