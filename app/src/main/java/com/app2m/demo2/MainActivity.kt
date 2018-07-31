@@ -13,7 +13,7 @@ import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
 //    private lateinit var mBinding: Demo2ActivityMainBinding
-    private val mBinding: Demo2ActivityMainBinding by lazy {
+    private val mBinding by lazy {
         DataBindingUtil.setContentView<Demo2ActivityMainBinding>(this, R.layout.demo2_activity_main)
     }
 
