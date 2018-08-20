@@ -35,6 +35,12 @@
             android:layout_height="wrap_content"
             android:textAllCaps="false"
             android:text="请求CommonCode By Rxkotlin(subscribeBy)"/>
+        <Button
+            android:id="@+id/btnListActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:text="kotlin listview"/>
         <TextView
             android:id="@+id/tvValue"
             android:layout_width="match_parent"

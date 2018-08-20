@@ -99,6 +99,21 @@ class NetworkActivity : AppCompatActivity() {
             compositeDisposable.add(disposable)
         }
 
+        btnListActivity.setOnClickListener {
+            val apiService = RequestClient.buildService(ApiService::class.java)
+            val observable = apiService.getCommonCodes()
+            var disposable = observable.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeBy(
+                            onError = {
+                                tvValue.text = it.message
+                            },
+                            onNext = {
+                                startActivity<MyListActivity>("data" to it)
+                            })
+            compositeDisposable.add(disposable)
+        }
+
     }
 
     override fun onBackPressed() {

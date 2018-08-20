@@ -13,6 +13,9 @@ ext {
 
     libs = [
             ankoCommons                     : "org.jetbrains.anko:anko-commons:${ankoVersion}",
+            ankoSdk25                       : "org.jetbrains.anko:anko-sdk25:${ankoVersion}",
+            ankoSdk25Coroutines             : "org.jetbrains.anko:anko-sdk25-coroutines:${ankoVersion}",
+            ankoAppcompatV7                 : "org.jetbrains.anko:anko-appcompat-v7:${ankoVersion}",
             kotlinStdlibJdk8                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             androidSupportV13               : "com.android.support:support-v13:${androidSupportVersion}",
             androidAppcompatV7              : "com.android.support:appcompat-v7:${androidSupportVersion}",

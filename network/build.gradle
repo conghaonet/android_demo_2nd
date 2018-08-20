@@ -11,6 +11,9 @@ dependencies {
     implementation libs.androidAppcompatV7
     implementation libs.androidConstraintLayout
     implementation libs.ankoCommons
+    implementation libs.ankoSdk25
+    implementation libs.ankoSdk25Coroutines
+    implementation libs.ankoAppcompatV7
     implementation libs.gson
     implementation libs.androidConstraintLayout
     testImplementation test.junit

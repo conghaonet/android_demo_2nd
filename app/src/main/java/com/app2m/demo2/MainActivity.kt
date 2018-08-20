@@ -33,6 +33,6 @@ class MainActivity : AppCompatActivity() {
         startActivity<MyTabMainActivity>()
     }
     fun onClickMyNetwork() {
-        startActivity<NetworkActivity>()
+        startActivity<NetworkActivity>("a" to "value", "b" to 2)
     }
 }

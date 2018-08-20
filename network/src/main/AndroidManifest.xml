@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name=".NetworkActivity" />
+        <activity android:name=".MyListActivity" />
         <activity android:name=".NetworkJavaActivity" />
     </application>
 
